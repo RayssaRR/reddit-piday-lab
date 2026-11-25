@@ -1,0 +1,8 @@
+{
+  "scenario": "baseline",
+  "target_url": "http://localhost:4000/recommendations",
+  "requests_total": 10,
+  "successes": 0,
+  "failures": 10,
+  "error_percentage": 100.0
+}

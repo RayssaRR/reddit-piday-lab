@@ -1,0 +1,98 @@
+
+services:
+  k8s-sim:
+    build:
+      context: ./services/k8s_sim
+    image: reddit-k8s-sim:1.0
+    restart: unless-stopped
+    networks:
+      - control-net
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"
+      interval: 3s
+      timeout: 2s
+      retries: 15
+      start_period: 3s
+
+  application:
+    build:
+      context: ./services/application
+    image: reddit-application:1.0
+    restart: unless-stopped
+    networks:
+      - backend-net
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"
+      interval: 3s
+      timeout: 2s
+      retries: 15
+      start_period: 3s
+
+  calico-sim:
+    build:
+      context: ./services/calico_sim
+    image: reddit-calico-sim:1.0
+    environment:
+      K8S_API_URL: http://k8s-sim:8000
+      APPLICATION_URL: http://application:8000
+    restart: unless-stopped
+    networks:
+      - control-net
+      - backend-net
+      - client-net
+    depends_on:
+      k8s-sim:
+        condition: service_healthy
+      application:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"
+      interval: 3s
+      timeout: 2s
+      retries: 15
+      start_period: 3s
+
+  probe:
+    build:
+      context: ./services/probe
+    image: reddit-probe:1.0
+    profiles:
+      - experiment
+    environment:
+      SCENARIO: ${SCENARIO:-baseline}
+      LOG_DIR: ${LOG_DIR:-/logs/baseline}
+      K8S_API_URL: http://k8s-sim:8000
+      CALICO_API_URL: http://calico-sim:8000
+    volumes:
+      - ./logs:/logs
+    networks:
+      - client-net
+      - control-net
+    depends_on:
+      k8s-sim:
+        condition: service_healthy
+      calico-sim:
+        condition: service_healthy
+    restart: "no"
+
+networks:
+  control-net:
+    internal: true
+
+  backend-net:
+    internal: true
+
+  client-net:
+    internal: true

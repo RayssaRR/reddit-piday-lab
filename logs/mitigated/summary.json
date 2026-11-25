@@ -1,0 +1,18 @@
+{
+  "scenario": "mitigated",
+  "finished_at": "2026-11-22T13:40:17.613729+00:00",
+  "upgrade_elapsed_seconds": 4.038117,
+  "recovery_intervention_elapsed_seconds": null,
+  "requests_total": 64,
+  "requests_error": 0,
+  "error_percentage": 0.0,
+  "outage_requests_total": 0,
+  "outage_requests_error": 0,
+  "outage_error_percentage": null,
+  "post_upgrade_requests_total": 48,
+  "post_upgrade_requests_error": 0,
+  "post_upgrade_error_percentage": 0.0,
+  "time_to_failure_seconds": null,
+  "time_to_recovery_seconds": null,
+  "recovery_propagation_seconds": null
+}

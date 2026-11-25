@@ -1,0 +1,36 @@
+
+services:
+  recommendation-service:
+    build:
+      context: ./recommendation-service
+    expose:
+      - "4000"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://localhost:4000/health')"
+      interval: 2s
+      timeout: 3s
+      retries: 10
+    networks:
+      - manoa-net
+
+  probe:
+    build:
+      context: ./probe
+    environment:
+      TARGET_URL: ${TARGET_URL:-http://localhost:4000/recommendations}
+      SCENARIO: ${SCENARIO:-baseline}
+    volumes:
+      - ./logs:/logs
+    depends_on:
+      recommendation-service:
+        condition: service_healthy
+    networks:
+      - manoa-net
+
+networks:
+  manoa-net:
+    driver: bridge

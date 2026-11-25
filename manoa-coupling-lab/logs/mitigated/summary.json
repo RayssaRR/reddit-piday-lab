@@ -1,0 +1,8 @@
+{
+  "scenario": "mitigated",
+  "target_url": "http://recommendation-service:4000/recommendations",
+  "requests_total": 10,
+  "successes": 10,
+  "failures": 0,
+  "error_percentage": 0.0
+}

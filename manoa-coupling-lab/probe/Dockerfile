@@ -1,0 +1,8 @@
+
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY probe.py .
+
+CMD ["python", "probe.py"]
