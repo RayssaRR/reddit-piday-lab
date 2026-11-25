@@ -4,6 +4,51 @@ Projeto desenvolvido para a disciplina de Fundamentos de Computação Concorrent
 
 O objetivo é reproduzir, em ambiente controlado com Docker Compose, mecanismos de falha relacionados à comunicação e ao acoplamento entre serviços, registrar métricas e avaliar estratégias de mitigação.
 
+## Integrantes
+
+<table width="100%">
+  <tr>
+    <td align="center" width="33%">
+      <a href="https://github.com/emanoelhenrick">
+        <img src="https://github.com/emanoelhenrick.png" width="90px" style="border-radius:50%;" alt="Emanoel Henrick"/><br />
+        <b>Emanoel Henrick</b>
+      </a>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://github.com/jenniferzeferino">
+        <img src="https://github.com/jenniferzeferino.png" width="90px" style="border-radius:50%;" alt="Jennifer Zeferino"/><br />
+        <b>Jennifer Zeferino</b>
+      </a>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://github.com/RaieleLeite">
+        <img src="https://github.com/RaieleLeite.png" width="90px" style="border-radius:50%;" alt="Raiele Leite"/><br />
+        <b>Raiele Leite</b>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <a href="https://github.com/RayssaRR">
+        <img src="https://github.com/RayssaRR.png" width="90px" style="border-radius:50%;" alt="Rayssa Santana"/><br />
+        <b>Rayssa Santana</b>
+      </a>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://github.com/FelipeLV12">
+        <img src="https://github.com/FelipeLV12.png" width="90px" style="border-radius:50%;" alt="Felipe Lopes"/><br />
+        <b>Felipe Lopes</b>
+      </a>
+    </td>
+    <td align="center" width="33%">
+      <a href="https://github.com/injuje">
+        <img src="https://github.com/injuje.png" width="90px" style="border-radius:50%;" alt="José Leandro"/><br />
+        <b>José Leandro</b>
+      </a>
+    </td>
+  </tr>
+</table>
+
 ## 1. Incidente de referência: Reddit
 
 **Fonte:** [Reddit Engineering — Postmortem](https://www.reddit.com/r/RedditEng/comments/11xx5o0/)
