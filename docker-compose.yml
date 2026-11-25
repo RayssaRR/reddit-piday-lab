@@ -72,7 +72,6 @@ services:
       - experiment
     environment:
       SCENARIO: ${SCENARIO:-baseline}
-      LOG_DIR: ${LOG_DIR:-/logs/baseline}
       K8S_API_URL: http://k8s-sim:8000
       CALICO_API_URL: http://calico-sim:8000
     volumes:

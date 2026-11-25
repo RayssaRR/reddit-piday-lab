@@ -1,7 +1,7 @@
 {
   "scenario": "mitigated",
-  "finished_at": "2026-11-22T13:40:17.613729+00:00",
-  "upgrade_elapsed_seconds": 4.038117,
+  "finished_at": "2026-11-25T14:21:12.974313+00:00",
+  "upgrade_elapsed_seconds": 4.033174,
   "recovery_intervention_elapsed_seconds": null,
   "requests_total": 64,
   "requests_error": 0,

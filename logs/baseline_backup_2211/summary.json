@@ -1,0 +1,14 @@
+{
+  "scenario": "baseline",
+  "requests_total": 64,
+  "requests_error": 32,
+  "error_percentage": 50.0,
+  "outage_error_percentage": 100.0,
+  "upgrade_elapsed_seconds": 4.026349,
+  "recovery_intervention_elapsed_seconds": 12.051026,
+  "first_failure_elapsed_seconds": 4.059665,
+  "first_recovery_elapsed_seconds": 12.135118,
+  "time_to_failure_seconds": 0.033,
+  "time_to_recovery_seconds": 8.075,
+  "recovery_propagation_seconds": 0.084
+}
